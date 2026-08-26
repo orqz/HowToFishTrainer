@@ -1,0 +1,17 @@
+# build output
+src/bin/
+src/obj/
+release/
+
+# The game's decompiled source. Fine to keep locally as a reference, but it's the
+# developers' copyrighted code - don't republish it.
+reference/game-source/
+
+__pycache__/
+*.pyc
+.cache/
+
+# local dev stuff, not for the repo
+.vscode/
+reference/
+decompile.sh
