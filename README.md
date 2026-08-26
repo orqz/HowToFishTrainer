@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/header.png" width="100%">
+<img src="docs/banner.jpg" width="100%">
 
 ![Version](https://img.shields.io/badge/version-1.0-5bc0a8?style=flat-square)
 ![BepInEx](https://img.shields.io/badge/BepInEx-5.4-9a5cf0?style=flat-square)
@@ -8,6 +8,8 @@
 ![Linux](https://img.shields.io/badge/Linux-2b3040?style=flat-square&logo=linux&logoColor=5bc0a8)
 ![Steam Deck](https://img.shields.io/badge/Steam%20Deck-2b3040?style=flat-square&logo=steamdeck&logoColor=5bc0a8)
 ![License](https://img.shields.io/badge/license-MIT-8a8f99?style=flat-square)
+
+[**Download on Nexus Mods**](https://www.nexusmods.com/howtofish/mods/54)
 
 </div>
 
@@ -26,6 +28,15 @@ Press **Delete** in game.
 **World** — teleport to any island, kill or reset creatures, kill boss, game speed, and a roulette wheel that always lands on your colour (bet green, 35x every time)
 
 Status pills in the corner show what's on.
+
+## Screenshots
+
+<p align="center">
+<img src="docs/screenshots/money.jpg" width="49%">
+<img src="docs/screenshots/player.jpg" width="49%">
+<img src="docs/screenshots/spawn.jpg" width="49%">
+<img src="docs/screenshots/casino.jpg" width="49%">
+</p>
 
 ## Install
 
@@ -65,6 +76,8 @@ Host only. As a guest most of it silently does nothing.
 This game has co-op, so spawning and money hit everyone in the lobby, not just you.
 
 Skins are written to your local save. Nothing touches Steam, and Wipe skins undoes it.
+
+If this is useful to you, a star on the repo is appreciated.
 
 ## License
 
