@@ -1,8 +1,6 @@
 <div align="center">
 
-# 🎣 HowToFishTrainer
-
-Mod menu for [How to Fish](https://store.steampowered.com/app/4001890/)
+<img src="docs/header.png" width="100%">
 
 ![Version](https://img.shields.io/badge/version-1.0-5bc0a8?style=flat-square)
 ![BepInEx](https://img.shields.io/badge/BepInEx-5.4-9a5cf0?style=flat-square)
@@ -10,10 +8,6 @@ Mod menu for [How to Fish](https://store.steampowered.com/app/4001890/)
 ![Linux](https://img.shields.io/badge/Linux-2b3040?style=flat-square&logo=linux&logoColor=5bc0a8)
 ![Steam Deck](https://img.shields.io/badge/Steam%20Deck-2b3040?style=flat-square&logo=steamdeck&logoColor=5bc0a8)
 ![License](https://img.shields.io/badge/license-MIT-8a8f99?style=flat-square)
-
-<!-- screenshots go here:
-<img src="docs/menu.png" width="49%"> <img src="docs/pills.png" width="49%">
--->
 
 </div>
 
