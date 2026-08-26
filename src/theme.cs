@@ -2,10 +2,8 @@ using UnityEngine;
 
 namespace HowToFishTrainer
 {
-    // All the look-and-feel lives here. Change the colours at the top and the whole menu changes.
     public static class Theme
     {
-        // ---- the knobs ----------------------------------------------------
         public static Color BgTop    = new Color(0.09f, 0.10f, 0.14f, 0.98f);
         public static Color BgBottom = new Color(0.04f, 0.04f, 0.06f, 0.98f);
         public static Color Panel    = new Color(0.13f, 0.14f, 0.18f, 1f);
@@ -14,13 +12,11 @@ namespace HowToFishTrainer
         public static Color Accent2  = new Color(0.60f, 0.40f, 1.00f, 1f);
         public static Color Text     = new Color(0.86f, 0.89f, 0.94f, 1f);
 
-        // ---- styles, built once on first draw ------------------------------
         public static GUIStyle Window, Button, Label, Header, Tab, TextField, Small, Big, Pill;
         public static Texture2D AccentTex, ShadowTex, PanelTex;
 
         private static bool _built;
 
-        /// <summary>A colour that slides between the two accents forever. Drives the glow.</summary>
         public static Color Pulse
         {
             get
@@ -58,7 +54,7 @@ namespace HowToFishTrainer
 
                 Color c = fill;
                 if (d > -edgeWidth) c = Color.Lerp(edge, fill, Mathf.Clamp01(-d / edgeWidth));
-                c.a *= Mathf.Clamp01(0.5f - d);          // soft outer edge
+                c.a *= Mathf.Clamp01(0.5f - d);
                 t.SetPixel(x, y, c);
             }
             t.Apply();
@@ -75,7 +71,6 @@ namespace HowToFishTrainer
             return t;
         }
 
-        // GUIStyle can only be built while a GUI is being drawn, so this is called from OnGUI.
         public static void Build()
         {
             if (_built) return;
@@ -161,7 +156,7 @@ namespace HowToFishTrainer
             Pill.normal.background = Rounded(new Color(0.04f, 0.05f, 0.07f, 0.82f),
                                              new Color(1f, 1f, 1f, 0.10f), 24, 8f);
             Pill.border = new RectOffset(10, 10, 10, 10);
-            Pill.wordWrap = false;      // otherwise "GOD MODE" breaks at the space
+            Pill.wordWrap = false;
             Pill.fontSize = 12;
             Pill.fontStyle = FontStyle.Bold;
             Pill.alignment = TextAnchor.MiddleLeft;
@@ -183,7 +178,6 @@ namespace HowToFishTrainer
             Tab.margin = new RectOffset(2, 2, 0, 0);
         }
 
-        /// <summary>Fill a rect with a flat colour. Used for the shadow and the sliding tab bar.</summary>
         public static void Fill(Rect r, Color c)
         {
             var old = GUI.color;

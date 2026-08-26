@@ -4,7 +4,7 @@ namespace HowToFishTrainer
 {
     public static class WorldTab
     {
-        private static string _armed;      // double-click guard for the destructive one
+        private static string _armed;
         private static float _armedUntil;
 
         public static void Draw()
@@ -70,8 +70,6 @@ namespace HowToFishTrainer
             if (EndGameManager.Instance != null) EndGameManager.Instance.FinishGameInput();
         }
 
-        // First click arms it, a second click within 3 seconds fires. Stops a stray
-        // mouse click ending the run.
         private static void Guarded(string label, string key, System.Action act)
         {
             bool armed = _armed == key && Time.unscaledTime < _armedUntil;

@@ -30,8 +30,6 @@ namespace HowToFishTrainer
             if (GUILayout.Button(_drip ? "Drip: ON" : "Drip: OFF", Theme.Button)) _drip = !_drip;
             GUILayout.EndHorizontal();
 
-            // Only refilter during Layout - changing the control count between the
-            // Layout and Repaint passes makes IMGUI throw.
             if (Event.current.type == EventType.Layout && _search != _lastSearch)
             {
                 _lastSearch = _search;
@@ -55,7 +53,6 @@ namespace HowToFishTrainer
             if (_all != null && _all.Count > 0) return;
 
             _all = new List<Item>();
-            // ids are bytes, and 255 is reserved as the boat's stand-in id
             for (int id = 0; id < byte.MaxValue; id++)
             {
                 Item item = GameInfo.GetSpawnable((byte)id);

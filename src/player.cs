@@ -43,9 +43,6 @@ namespace HowToFishTrainer
             GUILayout.Label("Local save only - nothing networked, nothing on Steam.", Theme.Small);
         }
 
-        // The game's own command only walks GameInfo.ItemWithSkinsforCommands, a list
-        // hand-filled in the Unity inspector. IDToItem covers every item that exists,
-        // so this catches anything they missed.
         private static void UnlockAllSkins()
         {
             int items = 0, skins = 0;
@@ -56,9 +53,6 @@ namespace HowToFishTrainer
                 if (item == null || !item.SkinPreset) continue;
 
                 items++;
-                // Only ever unlock indices that really exist - UnlockSkin does no
-                // range checking, and GetSkin will later hand a bogus index straight
-                // back to the code that indexes Skins[] with it.
                 for (int i = 0; i < item.SkinPreset.Skins.Count; i++)
                 {
                     SaveManager.UnlockSkin(item.ID, (byte)i);

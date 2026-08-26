@@ -4,7 +4,6 @@ namespace HowToFishTrainer
 {
     public static class MoneyTab
     {
-        // static, so it survives between frames. A local would reset to "1000" every draw.
         private static string _amount = "1000";
 
         public static void Draw()
@@ -36,8 +35,6 @@ namespace HowToFishTrainer
 
         private static int Parse()
         {
-            // long, not int: an int stops at 2,147,483,647 and TryParse just fails
-            // on anything bigger, silently giving you 0.
             long v;
             if (!long.TryParse(_amount, out v)) return 0;
             return (int)System.Math.Min(v, int.MaxValue);
