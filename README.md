@@ -2,12 +2,12 @@
 
 <img src="docs/banner.jpg" width="100%">
 
-![Version](https://img.shields.io/badge/version-1.0-5bc0a8?style=flat-square)
-![BepInEx](https://img.shields.io/badge/BepInEx-5.4-9a5cf0?style=flat-square)
+![Version](https://img.shields.io/badge/v1.0-2b3040?style=flat-square)
+![BepInEx](https://img.shields.io/badge/BepInEx%205.4-2b3040?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOTk2NmZmIiBzdHJva2Utd2lkdGg9IjIuNSIvPjwvc3ZnPg==)
 ![Windows](https://img.shields.io/badge/Windows-2b3040?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzViYzBhOCIgZD0iTTMgNS42IDEwLjIgNC42djcuMEgzek0xMS4zIDQuNCAyMSAzLjF2OC41aC05Ljd6TTMgMTIuN2g3LjJ2Ny4wTDMgMTguN3pNMTEuMyAxMi43SDIxdjguNmwtOS43LTEuM3oiLz48L3N2Zz4=)
 ![Linux](https://img.shields.io/badge/Linux-2b3040?style=flat-square&logo=linux&logoColor=5bc0a8)
 ![Steam Deck](https://img.shields.io/badge/Steam%20Deck-2b3040?style=flat-square&logo=steamdeck&logoColor=5bc0a8)
-![License](https://img.shields.io/badge/license-MIT-8a8f99?style=flat-square)
+![License](https://img.shields.io/badge/MIT%20License-2b3040?style=flat-square)
 
 [**Download on Nexus Mods**](https://www.nexusmods.com/howtofish/mods/54)
 
@@ -68,6 +68,7 @@ The installer puts that on your clipboard for you.
 | Menu opens, buttons do nothing | you're not the host |
 | Installer can't find the game | put it in your game folder and run it there |
 | Money went negative | it's a 32 bit int, wraps past 2.1 billion. use Remove ALL money |
+| Antivirus / Nexus flags `winhttp.dll` | expected, not a virus — see below |
 
 ## Notes
 
@@ -76,6 +77,8 @@ Host only. As a guest most of it silently does nothing.
 This game has co-op, so spawning and money hit everyone in the lobby, not just you.
 
 Skins are written to your local save. Nothing touches Steam, and Wipe skins undoes it.
+
+`winhttp.dll` gets flagged by some scanners. It works by pretending to be that system DLL so the game loads BepInEx instead — same trick every BepInEx mod uses, and it's a false positive. Use the plugin-only zip if you'd rather not have it and already run BepInEx.
 
 If this is useful to you, a star on the repo is appreciated.
 
