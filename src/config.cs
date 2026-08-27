@@ -5,7 +5,7 @@ namespace HowToFishTrainer
     public static class CFG
     {
         public const string Name = "HowToFishTrainer";
-        public const string Version = "v1.0";
+        public const string Version = "v1.1";
         public const KeyCode MenuKey = KeyCode.Delete;
 
         public const int WindowWidth = 470;

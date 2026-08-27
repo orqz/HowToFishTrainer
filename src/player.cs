@@ -4,6 +4,9 @@ namespace HowToFishTrainer
 {
     public static class PlayerTab
     {
+        private static string _armed;
+        private static float _armedUntil;
+
         public static void Draw()
         {
             GUILayout.Label("COMBAT", Theme.Header);
@@ -41,6 +44,21 @@ namespace HowToFishTrainer
             if (GUILayout.Button("Unlock every skin", Theme.Button)) UnlockAllSkins();
             if (GUILayout.Button("Wipe skins", Theme.Button)) SaveManager.LockAllSkins();
             GUILayout.Label("Local save only - nothing networked, nothing on Steam.", Theme.Small);
+
+            GUILayout.Label("IRREVERSIBLE", Theme.Header);
+            Guarded("Unlock ALL achievements", "ach_unlock", () => AchievementManager.ToggleAllAchievements(true));
+            Guarded("Reset all achievements + stats", "ach_reset", () => AchievementManager.ToggleAllAchievements(false));
+            GUILayout.Label("Writes straight to your Steam account. Reset also wipes all Steam stats, not just achievements.", Theme.Small);
+        }
+
+        private static void Guarded(string label, string key, System.Action act)
+        {
+            bool armed = _armed == key && Time.unscaledTime < _armedUntil;
+            if (GUILayout.Button(armed ? "Click again to confirm" : label, Theme.Button))
+            {
+                if (armed) { _armed = null; act(); }
+                else { _armed = key; _armedUntil = Time.unscaledTime + 3f; }
+            }
         }
 
         private static void UnlockAllSkins()
