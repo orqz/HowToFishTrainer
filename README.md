@@ -54,7 +54,7 @@ Or just extract the zip into your game folder yourself. Same thing.
 One extra step, set your launch options to:
 
 ```
-WINEDLLOVERRIDES="winhttp=n,b" %command%
+WINEDLLOVERRIDES="version=n,b" %command%
 ```
 
 The installer puts that on your clipboard for you.
@@ -68,7 +68,7 @@ The installer puts that on your clipboard for you.
 | Menu opens, buttons do nothing | you're not the host |
 | Installer can't find the game | put it in your game folder and run it there |
 | Money went negative | it's a 32 bit int, wraps past 2.1 billion. use Remove ALL money |
-| Antivirus / Nexus flags `winhttp.dll` | expected, not a virus — see below |
+| Antivirus flags something | rare, but see below |
 
 ## Notes
 
@@ -78,7 +78,7 @@ This game has co-op, so spawning and money hit everyone in the lobby, not just y
 
 Skins are written to your local save. Nothing touches Steam, and Wipe skins undoes it.
 
-`winhttp.dll` gets flagged by some scanners. It works by pretending to be that system DLL so the game loads BepInEx instead — same trick every BepInEx mod uses, and it's a false positive. Use the plugin-only zip if you'd rather not have it and already run BepInEx.
+BepInEx loads by pretending to be a DLL the game already imports (`version.dll`), which is how every BepInEx mod works. Some antivirus tools flag that pattern on sight. It's a false positive — use the plugin-only zip if you'd rather not have it and already run BepInEx.
 
 If this is useful to you, a star on the repo is appreciated.
 

@@ -41,6 +41,7 @@ python3 -c "
 import zipfile, sys
 zipfile.ZipFile('$CACHE/bepinex.zip').extractall('$FULL')
 "
+mv "$FULL/winhttp.dll" "$FULL/version.dll"
 mkdir -p "$FULL/BepInEx/plugins"
 cp "$BUILD/out/${NAME}.dll" "$FULL/BepInEx/plugins/"
 cp README.md LICENSE "$FULL/"

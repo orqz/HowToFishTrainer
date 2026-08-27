@@ -52,9 +52,10 @@ echo     !GAME!
 echo.
 
 xcopy /e /i /y /q "%~dp0BepInEx" "!GAME!\BepInEx" >nul
-copy /y "%~dp0winhttp.dll" "!GAME!\" >nul 2>nul
+copy /y "%~dp0version.dll" "!GAME!\" >nul 2>nul
 copy /y "%~dp0doorstop_config.ini" "!GAME!\" >nul 2>nul
 copy /y "%~dp0.doorstop_version" "!GAME!\" >nul 2>nul
+del /q "!GAME!\winhttp.dll" >nul 2>nul
 
 echo   Installed.
 echo.

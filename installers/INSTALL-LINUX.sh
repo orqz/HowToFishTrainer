@@ -48,7 +48,8 @@ echo "    $GAME"
 echo
 
 cp -r BepInEx "$GAME/"
-cp -f winhttp.dll doorstop_config.ini .doorstop_version "$GAME/" 2>/dev/null
+cp -f version.dll doorstop_config.ini .doorstop_version "$GAME/" 2>/dev/null
+rm -f "$GAME/winhttp.dll" 2>/dev/null
 
 echo "  Installed."
 echo
@@ -57,15 +58,15 @@ echo
 echo "    Steam -> right-click How to Fish -> Properties -> General"
 echo "    -> Launch Options, and paste exactly this:"
 echo
-echo '      WINEDLLOVERRIDES="winhttp=n,b" %command%'
+echo '      WINEDLLOVERRIDES="version=n,b" %command%'
 echo
 
 if command -v wl-copy >/dev/null 2>&1; then
-  printf 'WINEDLLOVERRIDES="winhttp=n,b" %%command%%' | wl-copy
+  printf 'WINEDLLOVERRIDES="version=n,b" %%command%%' | wl-copy
   echo "    (copied to your clipboard - just paste it)"
   echo
 elif command -v xclip >/dev/null 2>&1; then
-  printf 'WINEDLLOVERRIDES="winhttp=n,b" %%command%%' | xclip -selection clipboard
+  printf 'WINEDLLOVERRIDES="version=n,b" %%command%%' | xclip -selection clipboard
   echo "    (copied to your clipboard - just paste it)"
   echo
 fi
